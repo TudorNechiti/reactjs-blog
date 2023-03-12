@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import api from './api/posts';
 import { format } from 'date-fns';
 import DataContext from './context/DataContext'
+
 const EditPost = () => {
     const [editTitle, setEditTitle] = useState('');
     const [editBody, setEditBody] = useState('');

@@ -6,7 +6,7 @@ import DataContext from './context/DataContext';
 const PostPage = () => {
     const { posts, setPosts } = useContext(DataContext);
     const { id } = useParams();
-    const history = useNavigate();
+    const navigate = useNavigate();
     const post = posts.find(post => (post.id).toString() === id);
 
     const handleDelete = async (id) => {
@@ -14,7 +14,7 @@ const PostPage = () => {
             await api.delete(`/posts/${id}`);
             const postsList = posts.filter(post => post.id !== id);
             setPosts(postsList);
-            history.push('/');
+            navigate.push('/');
         } catch (err) {
             console.log(`Error: ${err.message}`);
         }
