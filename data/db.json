@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "My first post",
+      "dateTime": "23rd February, 2023",
+      "body": "Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum"
+    },
+    {
+      "id": 3,
+      "title": "My third post",
+      "dateTime": "06-03-2023 7:07:43 PM",
+      "body": "lmao"
+    }
+  ]
+}

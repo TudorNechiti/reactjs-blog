@@ -4,24 +4,31 @@ import Footer from './Footer';
 import Home from './Home';
 import NewPost from './NewPost';
 import PostPage from './PostPage';
+import EditPost from './EditPost';
 import About from './About';
-import MissingPage from './MissingPage';
-import { Route, Routes, useHistory } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import Missing from './Missing';
+import Layout from './Layout';
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import { DataProvider } from './context/DataContext';
 
 function App() {
+
   return (
-    <div className='App'>
-      <Header title="A cool blog"/>
-      <Nav />
-      <Routes>
-        <Route exact path="/" element={<Home/>}/>
-        <Route exact path="/home" element={<Home/>}/>
-        <Route exact path="/post" element={<NewPost/>}/>
-        <Route path="/post/:id" element={<PostPage/>}/>
-        <Route path="/about" element={<About/>} />
-        <Route path="*" element={<MissingPage/>} />
-      </Routes>
+    <div className="App">
+      <Header title="React JS Blog" />
+      <DataProvider>
+        <Nav />
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route exact path="/" element={<Home/>} />
+              <Route exact path="/post" element={<NewPost/>} />
+              <Route path="/edit/:id" element={<EditPost/>} />
+              <Route path="/post/:id" element={<PostPage/>} />
+              <Route path="/about" element={<About/>} />
+              <Route path="*" element={<Missing/>} />
+            </Route>
+          </Routes>
+      </DataProvider>
       <Footer />
     </div>
   );
